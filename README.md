@@ -1,4 +1,4 @@
 # data-structures-and-algorithms
 
 ## Challenges
-1. [Array reverse]('./challenges/arrayReverse')
+1. [Array reverse](challenges/arrayReverse/array-reverse.js)
