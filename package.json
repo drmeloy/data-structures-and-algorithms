@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "tw": "npm run test -- --watch"
+    "tw": "npm run test -- --watchAll"
   },
   "repository": {
     "type": "git",
