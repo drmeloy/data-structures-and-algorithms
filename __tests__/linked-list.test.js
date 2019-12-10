@@ -71,4 +71,13 @@ describe('Linked List', () => {
     list.insertAfter('me', 'woooah');
     expect(list.toString()).toEqual('out => me => woooah => check');
   });
+
+  it('can delete a specified node with delete', () => {
+    checkMeOut();
+    list.delete('me');
+    expect(list.toString()).toEqual('out => check');
+    list.append('woooah');
+    list.delete('check');
+    expect(list.toString()).toEqual('out => woooah');
+  });
 });
