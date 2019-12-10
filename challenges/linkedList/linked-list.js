@@ -25,6 +25,16 @@ class linkedList {
     }
     return false;
   }
+
+  toString(){
+    let returnString = '';
+    let current = this.head;
+    returnString += current.value;
+    while(current.next !== null){
+      current = current.next;
+    }
+    return returnString;
+  }
 }
 
 module.exports = { Node, linkedList };
