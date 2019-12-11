@@ -64,6 +64,8 @@ describe('Linked List', () => {
     checkMeOut();
     list.insertBefore('me', 'woooah');
     expect(list.toString()).toEqual('out => woooah => me => check');
+    list.insertBefore('out', 'first!');
+    expect(list.toString()).toEqual('first! => out => woooah => me => check');
   });
 
   it('inserts a node after a specified node value with insertAfter()', () => {
@@ -79,5 +81,19 @@ describe('Linked List', () => {
     list.append('woooah');
     list.delete('check');
     expect(list.toString()).toEqual('out => woooah');
+  });
+
+  it('can find a node value kth from end with kthFromEnd', () => {
+    expect(list.kthFromEnd(2)).toEqual('No items in list');
+    list.insert('oOoOo');
+    expect(list.kthFromEnd(0)).toEqual('oOoOo');
+    checkMeOut();
+    checkMeOut();
+    expect(list.kthFromEnd(3)).toEqual('out');
+    expect(list.kthFromEnd(2)).toEqual('me');
+    expect(list.kthFromEnd(1)).toEqual('check');
+    expect(list.kthFromEnd(7)).toEqual('out');
+    expect(list.kthFromEnd(-6)).toEqual('Please input a positive number');
+    expect(list.kthFromEnd(8)).toEqual('Provided number is higher than length of list. Please provide number within the linked list\'s length.');
   });
 });
