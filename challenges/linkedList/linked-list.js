@@ -91,15 +91,18 @@ class LinkedList {
     if(this.head === null){
       return 'No items in list';
     }
+
     let current = this.head;
     let lengthCounter = 1;
     while(current.next !== null){
       current = current.next;
       lengthCounter++;
     }
+
     if(num > lengthCounter){
       return 'Provided number is higher than length of list. Please provide number within the linked list\'s length.';
     }
+    
     current = this.head;
     for(let i = 0; i < lengthCounter - 1 - num; i++){
       current = current.next;
