@@ -54,6 +54,10 @@ class LinkedList {
 
   insertBefore(value, newValue){
     const node = new Node(newValue);
+    if(value === this.head.value){
+      node.next = this.head;
+      return this.head = node;
+    }
     let current = this.head;
     while(current.next.value !== value){
       current = current.next;
@@ -78,7 +82,32 @@ class LinkedList {
       current = current.next;
     }
     current.next = current.next.next;
+  }
 
+  kthFromEnd(num){
+    if(num < 0){
+      return 'Please input a positive number';
+    }
+    if(this.head === null){
+      return 'No items in list';
+    }
+
+    let current = this.head;
+    let lengthCounter = 1;
+    while(current.next !== null){
+      current = current.next;
+      lengthCounter++;
+    }
+
+    if(num > lengthCounter){
+      return 'Provided number is higher than length of list. Please provide number within the linked list\'s length.';
+    }
+    
+    current = this.head;
+    for(let i = 0; i < lengthCounter - 1 - num; i++){
+      current = current.next;
+    }
+    return current.value;
   }
 }
 
