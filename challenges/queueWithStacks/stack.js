@@ -18,7 +18,7 @@ class Stack {
   pop(){
     if(!this.top) return null;
     const pop = this.top;
-    this.top = this.next;
+    this.top = this.top.next;
     return pop;
   }
 

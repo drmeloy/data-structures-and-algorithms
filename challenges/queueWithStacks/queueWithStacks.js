@@ -17,7 +17,7 @@ class Pseudoqueue {
     }
     const removed = this.stack2.pop();
     while(this.stack2.top){
-      const popped = this.stack1.pop();
+      const popped = this.stack2.pop();
       this.stack1.push(popped.value);
     }
     return removed;
