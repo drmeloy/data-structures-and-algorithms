@@ -32,4 +32,4 @@ class Stack {
   }
 }
 
-module.exports = { Node, Stack }
+module.exports = { Node, Stack };
