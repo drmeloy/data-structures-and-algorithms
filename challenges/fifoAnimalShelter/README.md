@@ -8,10 +8,10 @@ enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat
 dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+This code challenge was very similar to past code challenges so it felt quite achieveable. To find the node to dequeue by preference we followed the nodes by current.next.
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![animal-shelter-fifo-whiteboard](../../assets/fifo-queue-whiteboard.JPG)
 
 ## Example whiteboard layout
 https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Whiteboard_Workflow.html
