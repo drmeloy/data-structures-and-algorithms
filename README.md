@@ -7,3 +7,4 @@
 4. [Linked lists](challenges/linkedList/linked-list.js)
 5. [Pseudoqueue](challenges/linkedList/pseudoqueueWithStacks.js)
 6. [Animal shelter fifo](challenges/fifoAnimalShelter/fifoAnimalShelter.js)
+7. [Bracket validation](challenges/multiBracketValidation/multi-bracket-validation.js)
