@@ -5,7 +5,7 @@ const multiBracketValidation = input => {
   for(let i = 0; i < input.length; i++){
     const char = input.charAt(i);
     const openers = /[({[]/;
-    const closers = /[)}\]]/
+    const closers = /[)}\]]/;
     let opener;
     let closer;
 
