@@ -6,3 +6,4 @@
 3. [Array binary search](challenges/arrayBinarySearch/array-binary-search.js)
 4. [Linked lists](challenges/linkedList/linked-list.js)
 5. [Pseudoqueue](challenges/linkedList/pseudoqueueWithStacks.js)
+6. [Animal shelter fifo](challenges/fifoAnimalShelter/fifoAnimalShelter.js)
