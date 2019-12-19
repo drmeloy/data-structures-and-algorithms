@@ -18,10 +18,10 @@ Square Brackets : []
 Curly Brackets : {}
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+We used a for loop based on the length of the input to check each character of the input string. If the input matched a regex pattern looking for bracket characters we either pushed to the stack or popped from the stack. Big O is O(n) because we have to go through each character of the input and could theoretically be pushing every item to the stack.
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![bracket-validation-whiteboard](../../assets/bracket-validation-whiteboard.JPG)
 
 ## Example whiteboard layout
 https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Whiteboard_Workflow.html
