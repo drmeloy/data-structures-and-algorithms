@@ -52,25 +52,38 @@ class BinarySearchTree {
 
   preOrder(){
     const array = [];
-    const castPreArray = (current = this.root) => {
+    (function castPreArray(current){
       if(current){
         array.push(current.value);
         castPreArray(current.left);
         castPreArray(current.right);
       }
-    };
-    
-    castPreArray();
-
+    }).apply(null, [this.root]);
     return array;
   }
 
   inOrder(){
-
+    const array = [];
+    (function castInArray(current){
+      if(current){
+        castInArray(current.left);
+        array.push(current.value);
+        castInArray(current.right);
+      }
+    }).apply(null, [this.root]);
+    return array;
   }
 
   postOrder(){
-
+    const array = [];
+    (function castPostArray(current){
+      if(current){
+        castPostArray(current.left);
+        castPostArray(current.right);
+        array.push(current.value);
+      }
+    }).apply(null, [this.root]);
+    return array;
   }
 }
 
