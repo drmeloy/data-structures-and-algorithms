@@ -42,7 +42,12 @@ describe('BinarySearchTree class', () => {
   });
 
   it('can return a collection from preorder traversal', () => {
+    console.log(tree.root);
     tree.add(1);
+    console.log(tree.root);
+    console.log(tree.root.left);
+    tree.add(0);
+    console.log(tree.root.left);
     tree.add(2);
     tree.add(4);
     tree.add(5);
