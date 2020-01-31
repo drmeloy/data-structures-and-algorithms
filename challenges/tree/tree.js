@@ -7,8 +7,8 @@ class Node {
 }
 
 class BinarySearchTree {
-  constructor(){
-    this.root = null;
+  constructor(root = null){
+    this.root = new Node(root);
   }
 
   add(value){
@@ -16,20 +16,24 @@ class BinarySearchTree {
     if(!this.root) this.root = node;
     else {
       let current = this.root;
-      while(current){
+      // eslint-disable-next-line no-extra-boolean-cast
+      while(!!current){
         if(node.value < current.value){
           if(!current.left){
             current.left = node;
-            current = current.left;
+            break;
           }
           current = current.left;
         }
         if(node.value >= current.value){
           if(!current.right){
             current.right = node;
-            current = current.right;
+            break;
           }
           current = current.right;
+        }
+        else {
+          break;
         }
       }
     }
@@ -46,13 +50,18 @@ class BinarySearchTree {
     return false;
   }
 
-  preOrder(current = this.root){
+  preOrder(){
     const array = [];
-    if(current){
-      array.push(current.value);
-      this.preOrder(current.left);
-      this.preOrder(current.right);
-    }
+    const castPreArray = (current = this.root) => {
+      if(current){
+        array.push(current.value);
+        castPreArray(current.left);
+        castPreArray(current.right);
+      }
+    };
+    
+    castPreArray();
+
     return array;
   }
 
@@ -64,3 +73,5 @@ class BinarySearchTree {
 
   }
 }
+
+module.exports = { Node, BinarySearchTree };
