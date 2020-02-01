@@ -8,7 +8,7 @@ class Node {
 
 class BinarySearchTree {
   constructor(value = null){
-    this.root = new Node(value);
+    this.root = typeof value === 'object' ? value : new Node(value);
   }
 
   add(value){
@@ -81,6 +81,14 @@ class BinarySearchTree {
       }
     }).apply(null, [this.root]);
     return array;
+  }
+
+  clone(copyNode){
+    if(!copyNode) return;
+    const node = new Node(copyNode.value);
+    node.left = this.clone(copyNode.left);
+    node.right = this.clone(copyNode.right);
+    return node;
   }
 }
 
