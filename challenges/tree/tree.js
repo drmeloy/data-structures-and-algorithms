@@ -83,6 +83,19 @@ class BinarySearchTree {
     return array;
   }
 
+  levelTraverse(){
+    if(this.root === null) return;
+    const queue = [this.root];
+    const returnArray = [];
+    while(queue.length > 0){
+      const current = queue[0];
+      if(current.left) queue.push(current.left);
+      if(current.right) queue.push(current.right);
+      returnArray.push(queue.shift().value);
+    }
+    return returnArray;
+  }
+
   clone(copyNode){
     if(!copyNode) return;
     const node = new Node(copyNode.value);

@@ -82,4 +82,18 @@ describe('BinarySearchTree class', () => {
     tree.add(2);
     expect(tree.postOrder()).toEqual([1, 2, 2, 1, 3, 4, 5, 5, 4, 3]);
   });
+
+  it('can return a breadth first traversal', () => {
+    tree.add(1);
+    tree.add(2);
+    tree.add(4);
+    tree.add(5);
+    expect(tree.levelTraverse()).toEqual([3, 1, 4, 2, 5]);
+    tree.add(3);
+    tree.add(4);
+    tree.add(5);
+    tree.add(1);
+    tree.add(2);
+    expect(tree.levelTraverse()).toEqual([3, 1, 4, 2, 3, 5, 1, 2, 4, 5]);
+  });
 });
