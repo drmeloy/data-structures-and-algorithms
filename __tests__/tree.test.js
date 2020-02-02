@@ -27,7 +27,7 @@ describe('BinarySearchTree class', () => {
 
   it('can instantiate a new tree with root null', () => {
     const emptyTree = new BinarySearchTree();
-    expect(emptyTree.root.value).toEqual(null);
+    expect(emptyTree.root).toEqual(null);
   });
 
   it('can instantiate a new tree with provided root', () => {
@@ -42,12 +42,7 @@ describe('BinarySearchTree class', () => {
   });
 
   it('can return a collection from preorder traversal', () => {
-    console.log(tree.root);
     tree.add(1);
-    console.log(tree.root);
-    console.log(tree.root.left);
-    tree.add(0);
-    console.log(tree.root.left);
     tree.add(2);
     tree.add(4);
     tree.add(5);

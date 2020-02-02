@@ -8,7 +8,7 @@ class Node {
 
 class BinarySearchTree {
   constructor(value = null){
-    this.root = typeof value === 'object' ? value : new Node(value);
+    this.root = typeof value === 'object' ? value : value !== null ? new Node(value) : null;
   }
 
   add(value){
