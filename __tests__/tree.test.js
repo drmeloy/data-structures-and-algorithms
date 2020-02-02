@@ -27,7 +27,7 @@ describe('BinarySearchTree class', () => {
 
   it('can instantiate a new tree with root null', () => {
     const emptyTree = new BinarySearchTree();
-    expect(emptyTree.root.value).toEqual(null);
+    expect(emptyTree.root).toEqual(null);
   });
 
   it('can instantiate a new tree with provided root', () => {

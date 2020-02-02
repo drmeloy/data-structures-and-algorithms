@@ -7,12 +7,12 @@ class Node {
 }
 
 class BinarySearchTree {
-  constructor(root = null){
-    this.root = new Node(root);
+  constructor(value = null){
+    this.root = typeof value === 'object' ? value : value !== null ? new Node(value) : null;
   }
 
   add(value){
-    let node = new Node(value);
+    const node = new Node(value);
     if(!this.root) this.root = node;
     else {
       let current = this.root;
@@ -25,15 +25,12 @@ class BinarySearchTree {
           }
           current = current.left;
         }
-        if(node.value >= current.value){
+        else {
           if(!current.right){
             current.right = node;
             break;
           }
           current = current.right;
-        }
-        else {
-          break;
         }
       }
     }
@@ -84,6 +81,14 @@ class BinarySearchTree {
       }
     }).apply(null, [this.root]);
     return array;
+  }
+
+  clone(copyNode){
+    if(!copyNode) return;
+    const node = new Node(copyNode.value);
+    node.left = this.clone(copyNode.left);
+    node.right = this.clone(copyNode.right);
+    return node;
   }
 }
 
