@@ -1,5 +1,5 @@
 const { fizzBuzzTree } = require('../challenges/fizzBuzzTree/FizzBuzzTree');
-const { Node, BinarySearchTree } = require('../challenges/tree/tree');
+const { BinarySearchTree } = require('../challenges/tree/tree');
 
 describe('fizzBuzzTree', () => {
   it('returns a new tree with values divisible by 3 replaced with "Fizz", values divisible by 5 replaced with "Buzz", values divisible by both replaced with "FizzBuzz", and values divisible by neither converted to strings', () => {
