@@ -103,6 +103,20 @@ class BinarySearchTree {
     node.right = this.clone(copyNode.right);
     return node;
   }
+
+  findMax(){
+    if(this.root === null) return;
+    const queue = [this.root];
+    let maxValue = this.root.value;
+    while(queue.length > 0){
+      const current = queue[0];
+      if(current.left) queue.push(current.left);
+      if(current.right) queue.push(current.right);
+      const currentValue = queue.shift().value;
+      maxValue = currentValue > maxValue ? currentValue : maxValue;
+    }
+    return maxValue;
+  }
 }
 
 module.exports = { Node, BinarySearchTree };

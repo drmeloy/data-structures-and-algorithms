@@ -96,4 +96,22 @@ describe('BinarySearchTree class', () => {
     tree.add(2);
     expect(tree.levelTraverse()).toEqual([3, 1, 4, 2, 3, 5, 1, 2, 4, 5]);
   });
+
+  it('can return the highest value', () => {
+    tree.add(1);
+    tree.add(2);
+    tree.add(4);
+    tree.add(5);
+    expect(tree.findMax()).toEqual(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(5);
+    tree.add(1);
+    tree.add(2);
+    expect(tree.findMax()).toEqual(5);
+    tree.add(100);
+    expect(tree.findMax()).toEqual(100);
+    tree.add(101);
+    expect(tree.findMax()).toEqual(101);
+  });
 });
